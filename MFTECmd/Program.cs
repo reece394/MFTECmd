@@ -171,7 +171,7 @@ public class Program
         
         var dtOpt = new Option<string>(
             "--dt"){
-            Description =        "The custom date/time format to use when displaying time stamps. See https://goo.gl/CNVq0k for options. Default is: yyyy-MM-dd HH:mm:ss.fffffff",
+            Description =        "The custom date/time format to use when displaying time stamps. See https://goo.gl/CNVq0k for options",
             DefaultValueFactory = _ => "yyyy-MM-dd HH:mm:ss.fffffff"
         };
         
@@ -226,7 +226,7 @@ public class Program
         var rmOpt = new Option<int>(
             "--rm")
         {
-            Description   = "Maximum size in bytes for resident data to include (default: 1024, max: 1024000)",
+            Description   = "Maximum size in bytes for resident data to include (max: 1024000)",
             DefaultValueFactory = _ => 1024
         };
         
@@ -266,11 +266,12 @@ public class Program
            rsOpt,
            vssOpt,
            dedupeOpt,
-           debugOpt,
-           traceOpt,
+          
            irOpt,
            reOpt,
-           rmOpt
+           rmOpt,
+           debugOpt,
+           traceOpt,
         };
 
         _rootCommand.Description = Header + "\r\n\r\n" + Footer;
